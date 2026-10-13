@@ -26,7 +26,13 @@
 </script>
 
 <template>
-  <header class="site-header" :class="{ 'is-scrolled': isScrolled }">
+  <header
+    class="site-header"
+    :class="{
+      'is-scrolled': isScrolled,
+      'menu-is-open': menuOpen,
+    }"
+  >
     <a class="site-logo" href="#home" @click="menuOpen = false">
       Alice & Kalle
     </a>
@@ -80,6 +86,13 @@
     box-shadow: 0 4px 20px rgb(86 87 77 / 6%);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
+  }
+
+  .site-header.menu-is-open {
+    background-color: var(--color-cream);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow: none;
   }
 
   .site-logo {
@@ -147,17 +160,32 @@
       position: absolute;
       top: 100%;
       left: 0;
-      display: none;
+      display: flex;
       flex-direction: column;
       align-items: stretch;
       gap: 0;
       width: 100%;
+      min-height: calc(100vh - 70px);
+      min-height: calc(100svh - 70px);
       padding: 12px 6% 24px;
-      background: var(--color-olive);
+      background: var(--color-cream);
+
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transform: translateY(-12px);
+
+      transition:
+        opacity 0.35s ease,
+        transform 0.4s ease,
+        visibility 0.4s ease;
     }
 
     .site-nav.is-open {
-      display: flex;
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateY(0);
     }
 
     .site-nav a {
