@@ -33,7 +33,12 @@
       'menu-is-open': menuOpen,
     }"
   >
-    <a class="site-logo" href="#home" @click="menuOpen = false">
+    <a
+      class="site-logo"
+      :class="{ 'logo-visible': isScrolled || menuOpen }"
+      href="#home"
+      @click="menuOpen = false"
+    >
       Alice & Kalle
     </a>
 
@@ -100,6 +105,21 @@
     font-size: 1.8rem;
     text-decoration: none;
     white-space: nowrap;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6px);
+
+    transition:
+      opacity 0.5s ease,
+      transform 0.5s ease,
+      visibility 0.5s ease;
+  }
+
+  .site-logo.logo-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
   }
 
   .site-nav {
