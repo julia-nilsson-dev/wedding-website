@@ -1,6 +1,8 @@
 <template>
   <footer class="site-footer">
-    <p class="footer-message">Vi längtar efter att fira med er</p>
+    <p class="footer-message">
+      Vi längtar efter att få samla våra favoritmänniskor på vår favoritö.
+    </p>
 
     <div class="footer-divider">
       <span></span>

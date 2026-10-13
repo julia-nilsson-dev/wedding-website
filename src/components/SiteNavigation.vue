@@ -82,7 +82,7 @@
     justify-content: space-between;
     width: 100%;
     padding: 22px 3%;
-    color: var(--color-olive);
+    color: var(--color-lavender);
     background-color: transparent;
     transition:
       background-color 0.4s ease,
@@ -138,26 +138,26 @@
     letter-spacing: 0.16em;
     text-decoration: none;
     text-transform: uppercase;
-    padding: 8px 10px;
+    padding: 4px 0 2px 0;
+    border-bottom: 1px solid transparent;
   }
 
   .site-nav a:hover {
     opacity: 1;
-    background-color: rgb(86 87 77 / 25%);
-    border-radius: 10px;
+    border-bottom: 1px solid var(--color-lavender);
   }
 
   .site-nav .nav-rsvp {
     border-radius: 8px;
     background-color: var(--color-lavender);
+    border: 1px solid var(--color-lavender);
     color: var(--color-cream);
     padding: 8px 25px;
   }
 
   .site-nav .nav-rsvp:hover {
     color: var(--color-lavender);
-    background-color: var(--color-blush);
-    border-color: var(--color-blush);
+    background-color: transparent;
     border-radius: 8px;
     opacity: 1;
   }
