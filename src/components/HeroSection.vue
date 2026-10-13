@@ -110,7 +110,7 @@
 
   @media (max-width: 600px) {
     .hero-content {
-      padding: 24px 16px 12%;
+      padding: 24px 16px 12px;
     }
 
     .hero-caption {
@@ -119,6 +119,7 @@
 
     .hero-title {
       font-size: clamp(2.5rem, 12vw, 4rem);
+      margin: 12px 0 8px;
     }
   }
 </style>
