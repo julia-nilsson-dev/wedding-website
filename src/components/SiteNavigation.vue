@@ -46,10 +46,14 @@
       class="menu-toggle"
       type="button"
       :aria-expanded="menuOpen"
-      aria-label="Öppna meny"
+      :aria-label="menuOpen ? 'Stäng meny' : 'Öppna meny'"
       @click="menuOpen = !menuOpen"
     >
-      {{ menuOpen ? "Close" : "Menu" }}
+      <span :class="{ 'is-open': menuOpen }" class="menu-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
     </button>
 
     <nav class="site-nav" :class="{ 'is-open': menuOpen }">
@@ -160,20 +164,85 @@
 
   .menu-toggle {
     display: none;
-    color: inherit;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    padding: 8px;
+    border: 1px solid var(--color-lavender);
+    border-radius: 50%;
+    /* border: none; */
     background: transparent;
-    border: 1px solid currentColor;
-    padding: 10px 14px;
-    font: inherit;
+    color: var(--color-olive);
+    cursor: pointer;
+    transition:
+      background-color 0.3s ease,
+      border-color 0.3s ease;
+  }
+
+  .menu-toggle:hover {
+    background-color: rgb(86 87 77 / 8%);
+    border-color: var(--color-olive);
+  }
+
+  .menu-icon {
+    position: relative;
+    display: block;
+    width: 25px;
+    height: 18px;
+  }
+
+  .menu-icon span {
+    position: absolute;
+    left: 0;
+    width: 25px;
+    height: 1.5px;
+    background-color: var(--color-lavender);
+    border-radius: 2px;
+    transform-origin: center;
+    transition:
+      top 0.3s ease,
+      transform 0.3s ease,
+      opacity 0.2s ease;
+  }
+
+  .menu-icon span:first-child {
+    top: 2px;
+  }
+
+  .menu-icon span:nth-child(2) {
+    top: 8px;
+  }
+
+  .menu-icon span:last-child {
+    top: 14px;
+  }
+
+  /* Förvandla strecken till ett symmetriskt X */
+  .menu-icon.is-open span:first-child {
+    top: 8px;
+    transform: rotate(45deg);
+  }
+
+  .menu-icon.is-open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-icon.is-open span:last-child {
+    top: 8px;
+    transform: rotate(-45deg);
   }
 
   @media (max-width: 900px) {
     .site-header {
-      padding: 20px 6%;
+      padding: 12px 12px;
+      color: var(--color-lavender);
     }
-
+    .site-logo {
+      padding-top: 7px;
+    }
     .menu-toggle {
-      display: block;
+      display: flex;
     }
 
     .site-nav {

@@ -1,5 +1,6 @@
 <script setup>
   import heroImage from "../assets/images/hero.jpg";
+  import heroImageMobile from "../assets/images/hero_mobile.png";
 </script>
 
 <template>
@@ -8,6 +9,8 @@
       <img
         class="hero-image"
         :src="heroImage"
+        :srcset="`${heroImageMobile} 900w, ${heroImage} 1200w`"
+        sizes="(max-width: 900px) 100vw, 100vw"
         alt="Alice och Kalle på Gotland"
       />
     </div>
@@ -109,8 +112,14 @@
   }
 
   @media (max-width: 600px) {
+    .hero {
+      place-items: start center;
+    }
+
     .hero-content {
-      padding: 24px 16px 12px;
+      align-self: start;
+      padding: 70px 16px 24px;
+      color: var(--color-lavender);
     }
 
     .hero-caption {
@@ -120,6 +129,15 @@
     .hero-title {
       font-size: clamp(2.5rem, 12vw, 4rem);
       margin: 12px 0 8px;
+    }
+
+    .hero-overlay {
+      background: linear-gradient(
+        to bottom,
+        rgba(40, 42, 35, 0.35) 0%,
+        rgba(40, 42, 35, 0.05) 60%,
+        rgba(40, 42, 35, 0.1) 100%
+      );
     }
   }
 </style>
