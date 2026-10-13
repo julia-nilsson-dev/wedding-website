@@ -22,7 +22,7 @@
     <div class="hero-content">
       <p class="hero-eyebrow">GOTLAND</p>
       <h1 class="hero-title">Alice & Kalle</h1>
-      <p class="hero-date">13 — 15 AUGUSTI 2027</p>
+      <p class="hero-date">14 AUGUSTI</p>
     </div>
 
     <span class="hero-caption">En helg att minnas</span>
