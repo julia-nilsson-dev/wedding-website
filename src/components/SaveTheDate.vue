@@ -26,7 +26,7 @@
       </video>
     </div>
 
-    <p class="video-caption">GOTLAND · 13–15 AUGUST 2027</p>
+    <p class="video-caption">GOTLAND · 13–15 AUGUST</p>
   </section>
 </template>
 

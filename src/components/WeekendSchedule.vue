@@ -59,7 +59,7 @@
   <section id="weekend" class="weekend-section">
     <div class="weekend-container">
       <div class="section-heading">
-        <p class="section-eyebrow">13–15 AUGUSTI 2027</p>
+        <p class="section-eyebrow">13–15 AUGUSTI</p>
         <h2>Helgens schema</h2>
         <p class="section-intro">
           Tre dagar tillsammans på Gotland, fyllda av kärlek, firande och fina
@@ -74,7 +74,7 @@
           class="schedule-card"
           :class="{ 'is-wedding-day': day.day === 'Lördag' }"
         >
-          <p class="card-date">{{ day.date }} · 2027</p>
+          <p class="card-date">{{ day.date }}</p>
 
           <h3>{{ day.day }}</h3>
 

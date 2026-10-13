@@ -28,8 +28,8 @@
           <div>
             <h3>Datum att hålla koll på</h3>
             <p>
-              Vi ses på Gotland den 13–15 augusti 2027. Planera gärna resan i
-              god tid!
+              Vi ses på Gotland den 13–15 augusti. Planera gärna resan i god
+              tid!
             </p>
           </div>
         </div>

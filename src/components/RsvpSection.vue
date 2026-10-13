@@ -34,7 +34,7 @@
 
         <h2>Vill du fira med oss?</h2>
 
-        <p class="rsvp-deadline">Svara senast 14 februari 2027</p>
+        <p class="rsvp-deadline">Svara senast 14 februari</p>
 
         <p class="rsvp-intro">
           Vi längtar efter att få fira vår stora dag tillsammans med dig! Fyll i
