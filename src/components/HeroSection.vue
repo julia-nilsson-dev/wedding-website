@@ -6,13 +6,15 @@
 <template>
   <section id="home" class="hero">
     <div class="hero-image-container">
-      <img
-        class="hero-image"
-        :src="heroImage"
-        :srcset="`${heroImageMobile} 900w, ${heroImage} 1200w`"
-        sizes="(max-width: 900px) 100vw, 100vw"
-        alt="Alice och Kalle på Gotland"
-      />
+      <picture>
+        <source media="(max-width: 900px)" :srcset="heroImageMobile" />
+
+        <img
+          class="hero-image"
+          :src="heroImage"
+          alt="Alice och Kalle på Gotland"
+        />
+      </picture>
     </div>
 
     <div class="hero-overlay"></div>
