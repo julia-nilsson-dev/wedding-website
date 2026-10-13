@@ -6,10 +6,11 @@
   <section id="welcome" class="save-the-date">
     <div class="save-the-date-header">
       <p class="section-eyebrow">SAVE THE DATE</p>
-      <h2>We can't wait to celebrate with you</h2>
+      <h2>Vi längtar efter att fira med er</h2>
       <p class="section-intro">
-        A little glimpse of what's to come. We look forward to celebrating with
-        you on Gotland.
+        En gotländsk bondtjej och en storstadskille – ibland blir livet lite
+        bättre än man kunnat tänka sig. Nu väntar ett nytt kapitel, och vi
+        längtar efter att få fira det tillsammans med er på Gotland!
       </p>
     </div>
 
