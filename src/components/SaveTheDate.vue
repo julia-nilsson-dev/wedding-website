@@ -26,8 +26,8 @@
 
       <p class="section-intro">
         En gotländsk bondtjej och en storstadskille – ibland blir livet lite
-        bättre än man kunnat tänka sig. Nu väntar ett nytt kapitel, och vi
-        längtar efter att få fira det tillsammans med er på Gotland!
+        bättre än man kunnat tänka sig. Nu väntar ett nytt kapitel, och vi ser
+        fram emot att få fira det tillsammans med er på Gotland.
       </p>
     </div>
 
