@@ -1,6 +1,6 @@
 <script setup>
-  import heroImage from "../assets/images/hero.jpg";
-  import heroImageMobile from "../assets/images/hero_mobile.png";
+  import heroImage from "../assets/images/IMG_3893.png";
+  import heroImageMobile from "../assets/images/IMG_3893.png";
 </script>
 
 <template>
@@ -21,11 +21,9 @@
 
     <div class="hero-content">
       <p class="hero-eyebrow">GOTLAND</p>
-      <h1 class="hero-title">Alice & Kalle</h1>
+      <h1 class="hero-title">Kalle & Alice</h1>
       <p class="hero-date">14 AUGUSTI</p>
     </div>
-
-    <span class="hero-caption">En helg att minnas</span>
   </section>
 </template>
 
@@ -65,6 +63,7 @@
 
     .hero-image {
       width: 100%;
+      height: 100vh;
     }
   }
 
@@ -120,8 +119,8 @@
 
     .hero-content {
       align-self: start;
-      padding: 70px 16px 24px;
-      color: var(--color-lavender);
+      padding: 90px 16px 24px;
+      /* color: var(--color-lavender); */
     }
 
     .hero-caption {

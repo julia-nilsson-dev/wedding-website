@@ -5,7 +5,7 @@
 <template>
   <section id="welcome" class="save-the-date">
     <div class="save-the-date-header">
-      <p class="section-eyebrow">SAVE THE DATE</p>
+      <p class="section-eyebrow">VI VILL BJUDA IN ER</p>
       <h2>Vi längtar efter att fira med er</h2>
       <p class="section-intro">
         En gotländsk bondtjej och en storstadskille – ibland blir livet lite

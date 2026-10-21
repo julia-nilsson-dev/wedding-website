@@ -5,18 +5,39 @@
     {
       number: "01",
       title: "Ett barnfritt firande",
-      text: "Den här helgen låter vi barnen få en egen semester medan vi firar tillsammans. Bröllopet och boendet är därför barnfritt. Vi hoppas att ni får möjlighet att njuta av en härlig helg tillsammans med oss!",
+      text: [
+        "Den här helgen låter vi barnen få en egen semester medan vi firar tillsammans. Bröllopet och boendet är därför barnfritt. Vi hoppas att ni får möjlighet att njuta av en härlig helg tillsammans med oss!",
+        "Ammande barn är välkomna, men vi ber er att meddela oss i förväg om ni tar med er barn under 1 år.",
+      ],
     },
     {
       number: "02",
       title: "Klädkod – Kostym",
       text: "För herrar innebär klädkoden kostym med skjorta, gärna tillsammans med slips eller fluga. För damer passar klänning, kjol, byxdress eller annan festlig klädsel som går nedanför knäna. Vi ser gärna somriga pastellfärger och toner!",
     },
+
     {
       number: "03",
       title: "Hitta hit",
-      text: "Adressen är När Gangvide 503. Mer information om vägbeskrivning och transport kommer närmare bröllopet.",
+      text: [
+        {
+          before: "Bröllopshelgen tillbringas på ",
+          linkText: "Gangvidefarm",
+          after: ", När Gangvide 503, 623 48 Stånga.",
+          url: "https://www.google.com/maps/place//data=!4m2!3m1!1s0x46f76bfc6b1f66e5:0x302956f41f55d0e4",
+        },
+        {
+          before: "Vigseln äger rum i ",
+          linkText: "När kyrka",
+          after: ", 623 48 När.",
+          url: "https://www.google.com/maps/place//data=!4m2!3m1!1s0x46f76ea866b1c45d:0xb33afbf6a129315e",
+        },
+        {
+          text: "Vi erbjuder transport till och från kyrkan med utgångspunkt från Gangvidefarm.",
+        },
+      ],
     },
+
     {
       number: "04",
       title: "Boka båt i tid",
@@ -76,7 +97,32 @@
           >
             <div class="info-answer-inner">
               <div class="info-answer">
-                <p>{{ item.text }}</p>
+                <p
+                  v-for="(paragraph, paragraphIndex) in Array.isArray(item.text)
+                    ? item.text
+                    : [item.text]"
+                  :key="paragraphIndex"
+                >
+                  <template v-if="typeof paragraph === 'string'">
+                    {{ paragraph }}
+                  </template>
+
+                  <template v-else>
+                    <template v-if="paragraph.text">
+                      {{ paragraph.text }}
+                    </template>
+                    <template v-else>
+                      {{ paragraph.before
+                      }}<a
+                        :href="paragraph.url"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="info-link"
+                        >{{ paragraph.linkText }}</a
+                      >{{ paragraph.after }}
+                    </template>
+                  </template>
+                </p>
               </div>
             </div>
           </div>
@@ -89,7 +135,7 @@
 <style scoped>
   .practical-section {
     padding: clamp(80px, 12vw, 150px) 24px;
-    background: #f5eff7;
+    background: var(--color-cream);
     color: var(--color-lavender);
   }
 
@@ -204,9 +250,32 @@
     line-height: 1.9;
   }
 
+  .info-answer p + p {
+    margin-top: 1.2em;
+  }
   .info-toggle:focus-visible {
     outline: 1px solid var(--color-lavender);
     outline-offset: 5px;
+  }
+
+  .info-link {
+    color: var(--color-lavender);
+    text-decoration: underline;
+    text-decoration-color: rgb(147 112 158 / 45%);
+    text-underline-offset: 4px;
+    transition:
+      color 0.2s ease,
+      text-decoration-color 0.2s ease;
+  }
+
+  .info-link:hover {
+    color: var(--color-olive);
+    text-decoration-color: var(--color-olive);
+  }
+
+  .info-link:focus-visible {
+    outline: 1px solid var(--color-lavender);
+    outline-offset: 3px;
   }
 
   @media (max-width: 600px) {

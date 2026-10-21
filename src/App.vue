@@ -17,10 +17,9 @@
     <HeroSection />
     <SaveTheDate />
     <RsvpSection />
-    <WeekendSchedule />
-    <AccommodationSection />
     <PracticalInfo />
-
+    <AccommodationSection />
+    <WeekendSchedule />
     <SpeechSection />
   </main>
 

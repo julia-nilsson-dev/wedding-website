@@ -52,8 +52,8 @@
 <style scoped>
   .accommodation-section {
     padding: clamp(80px, 12vw, 160px) 24px;
-    background: #fffdf9;
-    color: var(--color-olive);
+    background: #f5eff7;
+    color: var(--color-lavender);
   }
 
   .accommodation-content {

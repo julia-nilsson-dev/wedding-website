@@ -5,9 +5,9 @@
   const isScrolled = ref(false);
 
   const links = [
-    { label: "Helgen", href: "#weekend" },
-    { label: "Resa & Boende", href: "#accommodation" },
     { label: "Praktisk information", href: "#practical-info" },
+    { label: "Resa & Boende", href: "#accommodation" },
+    { label: "Helgen", href: "#weekend" },
     { label: "Anmälan tal", href: "#speeches" },
   ];
 
@@ -169,7 +169,7 @@
     width: 46px;
     height: 46px;
     padding: 8px;
-    border: 1px solid var(--color-lavender);
+    border: 1px solid var(--color-cream);
     border-radius: 50%;
     /* border: none; */
     background: transparent;
@@ -197,7 +197,7 @@
     left: 0;
     width: 25px;
     height: 1.5px;
-    background-color: var(--color-lavender);
+    background-color: var(--color-cream);
     border-radius: 2px;
     transform-origin: center;
     transition:

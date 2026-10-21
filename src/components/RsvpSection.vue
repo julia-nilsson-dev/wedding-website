@@ -7,6 +7,8 @@
 
   const name = ref("");
 
+  const phone = ref("");
+
   const wantsAccommodation = ref("");
 
   const foodPreferences = ref("");
@@ -17,12 +19,44 @@
 
   const showNotice = ref(false);
 
-  function submitRsvp() {
-    // Formuläret behöver kopplas till Google Sheets
+  const isSubmitting = ref(false);
 
-    // innan svaren kan sparas.
+  async function submitRsvp() {
+    if (isSubmitting.value) return;
 
-    showNotice.value = true;
+    isSubmitting.value = true;
+    showNotice.value = false;
+
+    const data = {
+      name: name.value,
+      phone: phone.value,
+      attending: attending.value,
+      wantsAccommodation: wantsAccommodation.value,
+      foodPreferences: foodPreferences.value,
+      songRequest: songRequest.value,
+      funFact: funFact.value,
+    };
+
+    try {
+      await fetch(
+        "https://script.google.com/macros/s/AKfycbxudoB7DD2zogWEu_uG4r-iipjTxE08XTYf3VinB2YRaxPu_c8r_m9pFdy9YotFQFcG2Q/exec",
+        {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "text/plain;charset=utf-8",
+          },
+          body: JSON.stringify(data),
+        },
+      );
+
+      showNotice.value = true;
+    } catch (error) {
+      console.error("Kunde inte skicka anmälan:", error);
+      alert("Det gick inte att skicka ditt svar. Försök gärna igen.");
+    } finally {
+      isSubmitting.value = false;
+    }
   }
 </script>
 
@@ -37,16 +71,17 @@
         <p class="rsvp-deadline">Svara senast 14 februari</p>
 
         <p class="rsvp-intro">
-          Vi längtar efter att få fira vår stora dag tillsammans med dig! Fyll i
-          formuläret nedan och berätta om du kommer. Vi ser fram emot att höra
-          från dig.
+          Nu närmar sig vår stora dag och vi hoppas att du vill vara med och
+          fira den tillsammans med oss! Fyll i formuläret nedan och meddela om
+          du kommer, så att vi kan börja planera för en oförglömlig helg
+          tillsammans.
         </p>
       </div>
 
       <div class="rsvp-form-wrapper">
         <Transition name="fade">
           <button
-            v-if="!showForm"
+            v-if="!showForm && !showNotice"
             class="rsvp-submit"
             type="button"
             @click="showForm = true"
@@ -56,7 +91,11 @@
         </Transition>
 
         <Transition name="form-reveal">
-          <form v-if="showForm" class="rsvp-form" @submit.prevent="submitRsvp">
+          <form
+            v-if="showForm && !showNotice"
+            class="rsvp-form"
+            @submit.prevent="submitRsvp"
+          >
             <div class="form-section">
               <p class="form-section-label">01 — OM DIG</p>
 
@@ -71,6 +110,23 @@
                   placeholder="Ditt fullständiga namn"
                   required
                 />
+              </div>
+
+              <div class="field">
+                <label for="guest-phone">Telefonnummer</label>
+
+                <input
+                  id="guest-phone"
+                  v-model="phone"
+                  type="tel"
+                  name="phone"
+                  autocomplete="tel"
+                  placeholder="Ditt telefonnummer"
+                />
+
+                <p class="field-hint">
+                  Så att våra toastmasters kan kontakta dig vid behov.
+                </p>
               </div>
             </div>
 
@@ -159,7 +215,7 @@
               </div>
             </div>
 
-            <div class="form-section bonus-section">
+            <div v-if="attending === 'yes'" class="form-section bonus-section">
               <p class="form-section-label">03 — LÄR KÄNNA DIG LITE BÄTTRE</p>
 
               <p class="bonus-intro">
@@ -197,16 +253,38 @@
             <div class="form-footer">
               <p class="required-note">* Obligatoriska fält</p>
 
-              <button class="rsvp-submit" type="submit">
-                Skicka mitt svar
+              <button
+                class="rsvp-submit"
+                type="submit"
+                :disabled="isSubmitting"
+                :aria-busy="isSubmitting"
+              >
+                <span
+                  v-if="isSubmitting"
+                  class="loader"
+                  aria-hidden="true"
+                ></span>
+                <span>
+                  {{
+                    isSubmitting ? "Skickar ditt svar..." : "Skicka mitt svar"
+                  }}
+                </span>
               </button>
-
-              <p v-if="showNotice" class="form-notice" role="status">
-                Tack för ditt svar! Formuläret behöver fortfarande kopplas till
-                Google Sheets för att registrera din anmälan.
-              </p>
             </div>
           </form>
+        </Transition>
+
+        <Transition name="form-reveal">
+          <div
+            v-if="showNotice"
+            class="rsvp-thank-you"
+            role="status"
+            aria-live="polite"
+          >
+            <p class="section-eyebrow">TACK FÖR DITT SVAR</p>
+            <h3>Tack för att du svarade!</h3>
+            <p>Vi ser fram emot att fira tillsammans med dig på Gotland.♡</p>
+          </div>
         </Transition>
       </div>
     </div>
@@ -271,7 +349,7 @@
   }
 
   .rsvp-intro {
-    max-width: 500px;
+    max-width: 600px;
 
     margin: 0 auto;
 
@@ -351,7 +429,6 @@
 
     transition: border-color 0.2s;
   }
-
   .field input:focus,
   .field textarea:focus {
     border-color: var(--color-lavender);
@@ -498,6 +575,33 @@
     color: var(--color-lavender);
   }
 
+  .rsvp-submit:disabled {
+    opacity: 0.8;
+    cursor: wait;
+  }
+
+  .loader {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    border: 2px solid rgb(255 253 249 / 40%);
+    border-top-color: #fffdf9;
+    border-radius: 50%;
+    animation: rsvp-spin 0.8s linear infinite;
+  }
+
+  @keyframes rsvp-spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .loader {
+      animation-duration: 1.8s;
+    }
+  }
+
   .form-notice {
     margin: 24px 0 0;
 
@@ -546,7 +650,6 @@
     margin: 0 auto;
   }
 
-  /* Mjuk övergång mellan knappen och formuläret */
   .fade-enter-active,
   .fade-leave-active {
     transition:
@@ -557,6 +660,7 @@
   .fade-enter-from,
   .fade-leave-to {
     opacity: 0;
+
     transform: translateY(8px);
   }
 
@@ -570,6 +674,7 @@
   .form-reveal-enter-from,
   .form-reveal-leave-to {
     opacity: 0;
+
     transform: translateY(20px);
   }
 
@@ -580,5 +685,29 @@
     .form-reveal-leave-active {
       transition: none;
     }
+  }
+
+  .rsvp-thank-you {
+    width: 100%;
+    margin-top: 32px;
+    padding: 48px 24px;
+    background: #fffdf9;
+    border: 1px solid rgb(147 112 158 / 18%);
+    text-align: center;
+  }
+
+  .rsvp-thank-you h3 {
+    margin: 16px 0;
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 400;
+    line-height: 1.1;
+  }
+
+  .rsvp-thank-you > p:last-child {
+    max-width: 420px;
+    margin: 0 auto;
+    font-size: 0.95rem;
+    line-height: 1.9;
   }
 </style>
