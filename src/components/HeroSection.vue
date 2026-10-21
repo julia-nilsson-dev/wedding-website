@@ -1,6 +1,6 @@
 <script setup>
-  import heroImage from "../assets/images/IMG_3893.png";
-  import heroImageMobile from "../assets/images/IMG_3893.png";
+  import heroImage from "../assets/images/kallealice.png";
+  import heroImageMobile from "../assets/images/kallealice.png";
 </script>
 
 <template>
