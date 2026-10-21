@@ -44,7 +44,7 @@
     {
       number: "05",
       title: "Mer information kommer",
-      text: "Vi uppdaterar sidan löpande med mer information inför bröllopshelgen. Titta gärna in här igen när det närmar sig!",
+      text: "Vi uppdaterar sidan löpande med mer information inför bröllopet. Titta gärna in här igen när det närmar sig!",
     },
   ];
 
@@ -63,9 +63,8 @@
       <h2>Praktisk information</h2>
 
       <p class="section-intro">
-        Här har vi samlat sådant som kan vara bra att veta inför vår
-        bröllopshelg på Gotland. Vi ser fram emot att få fira tillsammans med
-        er!
+        Här har vi samlat sådant som kan vara bra att veta inför vårt bröllop på
+        Gotland. Vi ser fram emot att få fira tillsammans med er!
       </p>
 
       <div class="info-list">
