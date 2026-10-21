@@ -5,9 +5,9 @@
   const isScrolled = ref(false);
 
   const links = [
+    { label: "Den stora dagen", href: "#weekend" },
     { label: "Praktisk information", href: "#practical-info" },
-    { label: "Resa & Boende", href: "#accommodation" },
-    { label: "Helgen", href: "#weekend" },
+    { label: "Långvägars?", href: "#accommodation" },
     { label: "Anmälan tal", href: "#speeches" },
   ];
 

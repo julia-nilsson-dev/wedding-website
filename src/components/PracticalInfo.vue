@@ -6,26 +6,24 @@
       number: "01",
       title: "Ett barnfritt firande",
       text: [
-        "Den här helgen låter vi barnen få en egen semester medan vi firar tillsammans. Bröllopet och boendet är därför barnfritt. Vi hoppas att ni får möjlighet att njuta av en härlig helg tillsammans med oss!",
+        "Den här helgen låter vi barnen få en egen semester medan vi firar tillsammans. Bröllopet och boendet är därför barnfritt. Vi älskar era barn men den här helgen älskar vi eran barnvakt.",
         "Ammande barn är välkomna, men vi ber er att meddela oss i förväg om ni tar med er barn under 1 år.",
       ],
     },
     {
       number: "02",
       title: "Klädkod – Kostym",
-      text: "För herrar innebär klädkoden kostym med skjorta, gärna tillsammans med slips eller fluga. För damer passar klänning, kjol, byxdress eller annan festlig klädsel som går nedanför knäna. Vi ser gärna somriga pastellfärger och toner!",
+      text: "För herrar rekommenderas kostym med skjorta, samt slips eller fluga. För damer rekommenderas klänning, kjol, byxdress eller annan festligare karaktär med längd nedanför knäna. Vi välkomnar somriga pastellfärger och toner.",
     },
-
     {
       number: "03",
+      title: "Bröllopsgåva",
+      text: "Er närvaro på vår bröllopsdag är den finaste gåvan vi kan önska oss. För den som ändå önskar uppmärksamma oss med en bröllopsgåva tar vi tacksamt emot ett bidrag till vår kommande bröllopsresa.",
+    },
+    {
+      number: "04",
       title: "Hitta hit",
       text: [
-        {
-          before: "Bröllopshelgen tillbringas på ",
-          linkText: "Gangvidefarm",
-          after: ", När Gangvide 503, 623 48 Stånga.",
-          url: "https://www.google.com/maps/place//data=!4m2!3m1!1s0x46f76bfc6b1f66e5:0x302956f41f55d0e4",
-        },
         {
           before: "Vigseln äger rum i ",
           linkText: "När kyrka",
@@ -33,15 +31,15 @@
           url: "https://www.google.com/maps/place//data=!4m2!3m1!1s0x46f76ea866b1c45d:0xb33afbf6a129315e",
         },
         {
-          text: "Vi erbjuder transport till och från kyrkan med utgångspunkt från Gangvidefarm.",
+          before: "Bröllopsmiddagen tillbringas på ",
+          linkText: "Gangvide",
+          after: ", När Gangvide 503, 623 48 Stånga.",
+          url: "https://www.google.com/maps/place//data=!4m2!3m1!1s0x46f76bfc6b1f66e5:0x302956f41f55d0e4",
+        },
+        {
+          text: "Vi erbjuder transport till och från kyrkan med utgångspunkt från Gangvide.",
         },
       ],
-    },
-
-    {
-      number: "04",
-      title: "Boka båt i tid",
-      text: "Augusti är en populär tid att besöka Gotland, så vi rekommenderar att ni bokar färjan i god tid för att säkra er plats.",
     },
     {
       number: "05",

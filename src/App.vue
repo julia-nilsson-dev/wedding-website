@@ -16,11 +16,11 @@
   <main>
     <HeroSection />
     <SaveTheDate />
-    <RsvpSection />
+    <WeekendSchedule />
     <PracticalInfo />
     <AccommodationSection />
-    <WeekendSchedule />
     <SpeechSection />
+    <RsvpSection />
   </main>
 
   <SiteFooter />

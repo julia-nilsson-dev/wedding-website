@@ -1,6 +1,6 @@
 <script setup>
-  import heroImage from "../assets/images/kallealice.png";
-  import heroImageMobile from "../assets/images/kallealice.png";
+  import heroImage from "../assets/images/hero.jpg";
+  import heroImageMobile from "../assets/images/hero_mobile.png";
 </script>
 
 <template>
@@ -21,7 +21,7 @@
 
     <div class="hero-content">
       <p class="hero-eyebrow">GOTLAND</p>
-      <h1 class="hero-title">Kalle & Alice</h1>
+      <h1 class="hero-title">Alice & Kalle</h1>
       <p class="hero-date">14 AUGUSTI</p>
     </div>
   </section>
@@ -97,10 +97,10 @@
 
   .hero-title {
     margin: 12px 0 16px;
-    font-family: var(--font-script);
     font-size: clamp(2.5rem, 9vw, 8.5rem);
     font-weight: 400;
     line-height: 1.15;
+    font-family: var(--font-script);
   }
 
   .hero-caption {

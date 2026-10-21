@@ -71,10 +71,10 @@
         <p class="rsvp-deadline">Svara senast 14 februari</p>
 
         <p class="rsvp-intro">
-          Nu närmar sig vår stora dag och vi hoppas att du vill vara med och
-          fira den tillsammans med oss! Fyll i formuläret nedan och meddela om
-          du kommer, så att vi kan börja planera för en oförglömlig helg
-          tillsammans.
+          Vi längtar efter att få fira vår stora dag tillsammans med dig!
+          Vänligen OSA genom att fylla i formuläret nedan. Om du är inbjuden som
+          + 1 ber vi dig också att registrera dig separat så att vi kan planera
+          dagen på bästa sätt. Vi ser fram emot att höra från dig! ♡
         </p>
       </div>
 
@@ -166,10 +166,11 @@
               <div v-if="attending === 'yes'" class="conditional-fields">
                 <fieldset class="choice-field">
                   <legend>
-                    Önskar du kostnadsfritt boende på Gangvidefarm den 13–15
-                    augusti? *
+                    För våra vänner som reser långvägars erbjuder vi boende på
+                    Gangvide. Är du intresserad av att bo på gården under
+                    bröllopshelgen?
                   </legend>
-
+                  ß
                   <p class="field-hint">
                     Boendet erbjuds till gäster som reser till Gotland från
                     fastlandet.

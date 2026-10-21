@@ -32,7 +32,7 @@
 <style scoped>
   .speech-section {
     padding: clamp(80px, 10vw, 150px) 24px;
-    background: #f5eff7;
+    background: var(--color-cream);
     color: var(--color-lavender);
     text-align: center;
   }

@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500;600&family=Lato:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500;600&family=Lato:wght@300;400;500;700&family=Playfair+Display:wght@400;500;600;700&display=swap");
 
 :root {
-  font-family: "DM Sans", sans-serif;
+  font-family: "Lato", sans-serif;
   color: #56574d;
   background: #f8f4ef;
 
@@ -12,7 +12,8 @@
   --color-olive: #56574d;
 
   --font-heading: "Cormorant Garamond", serif;
-  --font-body: "DM Sans", sans-serif;
+  --font-hero: "Playfair Display", serif;
+  --font-body: "Lato", sans-serif;
   --font-script: "Allura", cursive;
 
   font-synthesis: none;
@@ -51,6 +52,12 @@ h2,
 h3 {
   font-family: var(--font-heading);
   font-weight: 400;
+}
+
+/* Hero-rubrik */
+.hero-title {
+  font-family: var(--font-hero);
+  font-weight: 500;
 }
 
 p {
