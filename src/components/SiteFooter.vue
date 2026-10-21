@@ -10,7 +10,7 @@
       <span></span>
     </div>
 
-    <p class="footer-date">13 — 15 AUGUSTI · GOTLAND</p>
+    <p class="footer-date">14 AUGUSTI · GOTLAND</p>
 
     <a href="#home" class="back-to-top"> Tillbaka till toppen ↑ </a>
 
