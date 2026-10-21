@@ -1,12 +1,29 @@
 <script setup>
+  import { ref } from "vue";
   import saveTheDateVideo from "../assets/videos/save-the-date.mov";
+
+  const isPlaying = ref(false);
+  const videoRef = ref(null);
+
+  async function playVideo() {
+    if (!videoRef.value) return;
+
+    try {
+      await videoRef.value.play();
+      isPlaying.value = true;
+    } catch (error) {
+      console.error("Videon kunde inte startas:", error);
+    }
+  }
 </script>
 
 <template>
   <section id="welcome" class="save-the-date">
     <div class="save-the-date-header">
       <p class="section-eyebrow">VI VILL BJUDA IN ER</p>
+
       <h2>Vi längtar efter att fira med er</h2>
+
       <p class="section-intro">
         En gotländsk bondtjej och en storstadskille – ibland blir livet lite
         bättre än man kunnat tänka sig. Nu väntar ett nytt kapitel, och vi
@@ -14,19 +31,50 @@
       </p>
     </div>
 
-    <div class="video-frame">
+    <div class="video-frame" :class="{ 'is-playing': isPlaying }">
       <video
+        ref="videoRef"
         class="save-the-date-video"
+        :class="{ 'video-visible': isPlaying }"
         controls
         playsinline
         preload="metadata"
+        @ended="isPlaying = false"
       >
-        <source :src="saveTheDateVideo" type="video/mp4" />
-        Your browser does not support this video.
+        <source :src="saveTheDateVideo" />
+        Din webbläsare kan inte spela upp videon.
       </video>
+
+      <Transition name="cover">
+        <button
+          v-if="!isPlaying"
+          class="video-cover"
+          type="button"
+          aria-label="Spela upp vår Save the Date-film"
+          @click="playVideo"
+        >
+          <span class="cover-eyebrow">EN LITEN FILMHÄLSNING</span>
+
+          <span class="cover-title">Alice & Kalle</span>
+
+          <span class="play-button">
+            <svg
+              viewBox="0 0 24 24"
+              width="22"
+              height="22"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path d="M8 5.5v13l10-6.5z" />
+            </svg>
+          </span>
+
+          <span class="cover-instruction">TRYCK FÖR ATT SE FILMEN</span>
+        </button>
+      </Transition>
     </div>
 
-    <p class="video-caption">GOTLAND · 13–15 AUGUST</p>
+    <p class="video-caption">GOTLAND · 14 AUGUSTI</p>
   </section>
 </template>
 
@@ -67,22 +115,111 @@
   }
 
   .video-frame {
-    width: min(100%, 1000px);
+    position: relative;
+    width: min(100%, 900px);
+    aspect-ratio: 16 / 9;
     margin: 0 auto;
     overflow: hidden;
-    background: #e8e3db;
+    background: #e9e6dc;
+    border: 1px solid rgb(86 87 77 / 12%);
   }
 
   .save-the-date-video {
     display: block;
     width: 100%;
-    height: auto;
-    max-height: 80svh;
+    height: 100%;
     object-fit: contain;
+    opacity: 0;
+    transition: opacity 700ms ease;
+  }
+
+  .save-the-date-video.video-visible {
+    opacity: 1;
+  }
+
+  .video-cover {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    border: 0;
+    background: #e9e6dc;
+    color: var(--color-olive);
+    cursor: pointer;
+    transition: background-color 300ms ease;
+  }
+
+  .video-cover:hover {
+    background: #e4e0d5;
+  }
+
+  .cover-eyebrow {
+    margin-bottom: 16px;
+    color: var(--color-lavender);
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+  }
+
+  .cover-title {
+    font-family: var(--font-script);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    line-height: 1.15;
+  }
+
+  .cover-subtitle {
+    margin-top: 8px;
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    letter-spacing: 0.12em;
+  }
+
+  .play-button {
+    display: flex;
+    width: 58px;
+    height: 58px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 28px;
+    padding-left: 3px;
+    border: 1px solid rgb(147 112 158 / 45%);
+    border-radius: 50%;
+    background: var(--color-lavender);
+    color: #fffdf9;
+    transition:
+      transform 300ms ease,
+      background-color 300ms ease;
+  }
+
+  .video-cover:hover .play-button {
+    transform: scale(1.08);
+    background: #80618b;
+  }
+
+  .cover-instruction {
+    margin-top: 14px;
+    color: var(--color-olive);
+    font-size: 0.58rem;
+    letter-spacing: 0.16em;
+  }
+
+  .cover-enter-active,
+  .cover-leave-active {
+    transition:
+      opacity 650ms ease,
+      transform 650ms ease;
+  }
+
+  .cover-leave-to {
+    opacity: 0;
+    transform: scale(1.02);
   }
 
   .video-caption {
     margin-top: 24px;
+    color: var(--color-olive);
     font-size: 0.7rem;
     letter-spacing: 0.18em;
   }
@@ -93,7 +230,36 @@
     }
 
     .video-frame {
-      width: 100%;
+      aspect-ratio: 4 / 3;
+    }
+
+    .cover-eyebrow {
+      font-size: 0.55rem;
+      margin-bottom: 10px;
+    }
+
+    .cover-title {
+      font-size: 2.8rem;
+    }
+
+    .play-button {
+      width: 50px;
+      height: 50px;
+      margin-top: 20px;
+    }
+
+    .cover-instruction {
+      font-size: 0.5rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .save-the-date-video,
+    .video-cover,
+    .play-button,
+    .cover-enter-active,
+    .cover-leave-active {
+      transition: none;
     }
   }
 </style>
