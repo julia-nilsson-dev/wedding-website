@@ -13,7 +13,7 @@
     {
       number: "02",
       title: "Klädkod – Kostym",
-      text: "För herrar rekommenderas kostym med skjorta, samt slips eller fluga. För damer rekommenderas klänning, kjol, byxdress eller annan festligare karaktär med längd nedanför knäna. Vi välkomnar somriga pastellfärger och toner.",
+      text: "För herrar rekommenderas kostym med skjorta, samt slips eller fluga. För damer rekommenderas klänning, kjol, byxdress av festligare karaktär med längd nedanför knäna. Vi välkomnar somriga pastellfärger och toner.",
     },
     {
       number: "03",
