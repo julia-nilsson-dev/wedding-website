@@ -120,7 +120,6 @@
     .hero-content {
       align-self: start;
       padding: 90px 16px 24px;
-      /* color: var(--color-lavender); */
     }
 
     .hero-caption {
@@ -128,8 +127,16 @@
     }
 
     .hero-title {
-      font-size: clamp(2.5rem, 12vw, 4rem);
-      margin: 12px 0 8px;
+      font-size: clamp(3.5rem, 15vw, 5.5rem);
+      margin: 16px 0 12px;
+      line-height: 1.1;
+    }
+
+    .hero-eyebrow,
+    .hero-date {
+      font-size: clamp(0.9rem, 3.5vw, 1.2rem);
+      letter-spacing: 0.22em;
+      line-height: 1.8;
     }
 
     .hero-overlay {
