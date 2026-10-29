@@ -7,9 +7,9 @@
 
       <p class="accommodation-intro">
         Reser du långt för att fira med oss? Vi erbjuder kostnadsfritt boende på
-        Gangvide Farm under bröllopshelgen. För dig som bor på gården väntar
-        dessutom lite extra tid tillsammans, från fredag till söndag. Ange gärna
-        i din anmälan om du önskar boende.
+        Gangvide under bröllopshelgen. För dig som bor på gården väntar dessutom
+        lite extra tid tillsammans, från fredag till söndag. Ange gärna i din
+        anmälan om du önskar boende.
       </p>
 
       <div class="accommodation-details">
@@ -20,8 +20,8 @@
             <h3>Fredag – välkommen till gården</h3>
             <p>
               Under dagen checkar ni in, landar och gör er hemmastadda på
-              Gangvide Farm. På kvällen samlas vi för en avslappnad middag och
-              lite mingel – en mysig start på bröllopshelgen.
+              Gangvide. På kvällen samlas vi för en avslappnad middag och lite
+              mingel – en mysig start på bröllopshelgen.
             </p>
             <span class="detail-note">För boende på Gangvide</span>
           </div>

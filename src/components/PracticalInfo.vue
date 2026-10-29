@@ -7,7 +7,6 @@
       title: "Ett barnfritt firande",
       text: [
         "Den här helgen låter vi barnen få en egen semester medan vi firar tillsammans. Bröllopet och boendet är därför barnfritt. Vi älskar era barn men den här helgen älskar vi eran barnvakt.",
-        "Ammande barn är välkomna, men vi ber er att meddela oss i förväg om ni tar med er barn under 1 år.",
       ],
     },
     {

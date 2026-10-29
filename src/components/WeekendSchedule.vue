@@ -3,7 +3,8 @@
     {
       time: "13.15",
       title: "Avfärd till kyrkan",
-      description: "För er som bor på Gangvide går vi gemensamt mot När kyrka.",
+      description:
+        "För er som bor på Gangvide åker vi gemensamt mot När kyrka.",
       note: "För boende på Gangvide",
       type: "transport",
     },
@@ -30,7 +31,7 @@
     {
       title: "Bröllopsmiddag",
       description:
-        "Toasmasters hälsar alla välkomna och presenterar kvällen program.",
+        "Toasmasters hälsar alla välkomna och presenterar kvällens program.",
       type: "dinner",
     },
     {
@@ -263,7 +264,7 @@
     display: inline-block;
     margin: 14px 0 0;
     padding: 7px 12px;
-    background: #f5eff7;
+    background: var(--color-blush);
     color: var(--color-lavender);
     font-size: 0.72rem;
     letter-spacing: 0.04em;
