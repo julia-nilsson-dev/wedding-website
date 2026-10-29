@@ -14,7 +14,18 @@
 
       <div class="accommodation-details">
         <div class="detail-item">
-          <span class="detail-number">♥</span>
+          <span class="detail-number" aria-hidden="true">
+            <svg
+              class="detail-heart"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 21 C10.5 19.5 2 12.5 2 7.5 C2 3.5 7 1.5 12 6.5 C17 1.5 22 3.5 22 7.5 C22 12.5 13.5 19.5 12 21 Z"
+                fill="currentColor"
+              />
+            </svg>
+          </span>
           <div>
             <p class="detail-eyebrow">13 AUGUSTI</p>
             <h3>Fredag – välkommen till gården</h3>
@@ -28,7 +39,18 @@
         </div>
 
         <div class="detail-item">
-          <span class="detail-number">♥</span>
+          <span class="detail-number" aria-hidden="true">
+            <svg
+              class="detail-heart"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 21 C10.5 19.5 2 12.5 2 7.5 C2 3.5 7 1.5 12 6.5 C17 1.5 22 3.5 22 7.5 C22 12.5 13.5 19.5 12 21 Z"
+                fill="currentColor"
+              />
+            </svg>
+          </span>
           <div>
             <p class="detail-eyebrow">14 AUGUSTI</p>
             <h3>Lördag – den stora dagen</h3>
@@ -40,7 +62,18 @@
         </div>
 
         <div class="detail-item">
-          <span class="detail-number">♥</span>
+          <span class="detail-number" aria-hidden="true">
+            <svg
+              class="detail-heart"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 21 C10.5 19.5 2 12.5 2 7.5 C2 3.5 7 1.5 12 6.5 C17 1.5 22 3.5 22 7.5 C22 12.5 13.5 19.5 12 21 Z"
+                fill="currentColor"
+              />
+            </svg>
+          </span>
           <div>
             <p class="detail-eyebrow">15 AUGUSTI</p>
             <h3>Söndag – en lugn avslutning</h3>
@@ -54,7 +87,18 @@
         </div>
 
         <div class="detail-item">
-          <span class="detail-number">♥</span>
+          <span class="detail-number" aria-hidden="true">
+            <svg
+              class="detail-heart"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 21 C10.5 19.5 2 12.5 2 7.5 C2 3.5 7 1.5 12 6.5 C17 1.5 22 3.5 22 7.5 C22 12.5 13.5 19.5 12 21 Z"
+                fill="currentColor"
+              />
+            </svg>
+          </span>
           <div>
             <p class="detail-eyebrow">BRA ATT VETA</p>
             <h3>Resan till Gotland</h3>
@@ -123,10 +167,19 @@
   }
 
   .detail-number {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
     padding-top: 5px;
     color: var(--color-olive);
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
+  }
+
+  .detail-heart {
+    display: block;
+    width: 24px;
+    height: 24px;
+    color: var(--color-olive);
+    overflow: visible;
   }
 
   .detail-eyebrow {

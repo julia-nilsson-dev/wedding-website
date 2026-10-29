@@ -64,12 +64,6 @@
       </header>
 
       <div class="schedule">
-        <!-- <div class="schedule-date">
-          <span class="date-day">14</span>
-          <span class="date-month">Augusti</span>
-          <span class="date-weekday">Lördag</span>
-        </div> -->
-
         <div class="timeline">
           <article
             v-for="(event, index) in events"
@@ -77,7 +71,18 @@
             class="timeline-event"
             :class="`event-${event.type}`"
           >
-            <div class="timeline-marker" aria-hidden="true">♥</div>
+            <div class="timeline-marker" aria-hidden="true">
+              <svg
+                class="timeline-heart"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 21 C10.5 19.5 2 12.5 2 7.5 C2 3.5 7 1.5 12 6.5 C17 1.5 22 3.5 22 7.5 C22 12.5 13.5 19.5 12 21 Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
 
             <div class="timeline-content">
               <p v-if="event.time" class="event-time">{{ event.time }}</p>
@@ -93,7 +98,18 @@
               </p>
             </div>
           </article>
-          <div class="timeline-marker" aria-hidden="true">♥</div>
+          <div class="timeline-marker" aria-hidden="true">
+            <svg
+              class="timeline-heart"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 21 C10.5 19.5 2 12.5 2 7.5 C2 3.5 7 1.5 12 6.5 C17 1.5 22 3.5 22 7.5 C22 12.5 13.5 19.5 12 21 Z"
+                fill="currentColor"
+              />
+            </svg>
+          </div>
         </div>
       </div>
     </div>
@@ -280,14 +296,11 @@
   }
 
   .timeline-heart {
-    position: absolute;
-    bottom: -4px;
-    left: 1.5px;
-    z-index: 2;
-    padding: 0px;
+    display: block;
+    width: 24px;
+    height: 24px;
     color: var(--color-lavender);
-    font-size: 2.25rem;
-    line-height: 1;
+    overflow: visible;
   }
 
   @media (max-width: 650px) {

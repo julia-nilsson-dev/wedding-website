@@ -6,7 +6,20 @@
 
     <div class="footer-divider">
       <span></span>
-      <span class="footer-heart">♡</span>
+      <svg
+        class="footer-heart"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
+        <path
+          d="M12 21 C10.5 19.5 2 12.5 2 7.5 C2 3.5 7 1.5 12 6.5 C17 1.5 22 3.5 22 7.5 C22 12.5 13.5 19.5 12 21 Z"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.4"
+          stroke-linejoin="round"
+        />
+      </svg>
       <span></span>
     </div>
 
@@ -61,7 +74,11 @@
   }
 
   .footer-heart {
-    font-size: 1.2rem;
+    display: block;
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    color: var(--color-lavender);
   }
 
   .footer-date {

@@ -44,6 +44,7 @@
 
     <button
       class="menu-toggle"
+      :class="{ 'is-scrolled': isScrolled }"
       type="button"
       :aria-expanded="menuOpen"
       :aria-label="menuOpen ? 'Stäng meny' : 'Öppna meny'"
@@ -171,7 +172,6 @@
     padding: 8px;
     border: 1px solid var(--color-cream);
     border-radius: 50%;
-    /* border: none; */
     background: transparent;
     color: var(--color-olive);
     cursor: pointer;
@@ -185,6 +185,9 @@
     border-color: var(--color-olive);
   }
 
+  .menu-toggle.is-scrolled {
+    border-color: var(--color-lavender);
+  }
   .menu-icon {
     position: relative;
     display: block;
@@ -206,6 +209,9 @@
       opacity 0.2s ease;
   }
 
+  .menu-toggle.is-scrolled .menu-icon span {
+    background-color: var(--color-lavender);
+  }
   .menu-icon span:first-child {
     top: 2px;
   }

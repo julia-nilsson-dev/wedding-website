@@ -71,7 +71,24 @@
           Vi längtar efter att få fira vår stora dag tillsammans med dig!
           Vänligen OSA genom att fylla i formuläret nedan. Om du är inbjuden som
           + 1 ber vi dig också att registrera dig separat så att vi kan planera
-          dagen på bästa sätt. Vi ser fram emot att höra från dig! ♡
+          dagen på bästa sätt.
+        </p>
+        <p class="form-notice">
+          Vi ser fram emot att höra från dig!
+          <svg
+            class="form-heart"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M12 21 C10.5 19.5 2 12.5 2 7.5 C2 3.5 7 1.5 12 6.5 C17 1.5 22 3.5 22 7.5 C22 12.5 13.5 19.5 12 21 Z"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.4"
+              stroke-linejoin="round"
+            />
+          </svg>
         </p>
       </div>
 
@@ -262,7 +279,24 @@
           >
             <p class="section-eyebrow">TACK FÖR DITT SVAR</p>
             <h3>Tack för att du svarade!</h3>
-            <p>Vi ser fram emot att fira tillsammans med dig på Gotland.♡</p>
+            <p class="thank-you-message">
+              Vi uppskattar att du tog dig tid att svara och är glada att få
+              dela den här speciella tiden med våra nära och kära.
+              <svg
+                class="thank-you-heart"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M12 21 C10.5 19.5 2 12.5 2 7.5 C2 3.5 7 1.5 12 6.5 C17 1.5 22 3.5 22 7.5 C22 12.5 13.5 19.5 12 21 Z"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </p>
           </div>
         </Transition>
       </div>
@@ -337,6 +371,22 @@
     line-height: 1.9;
   }
 
+  .form-notice {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    color: var(--color-lavender);
+  }
+
+  .form-notice .form-heart {
+    display: inline-block;
+    flex-shrink: 0;
+    width: 14px;
+    height: 14px;
+    color: var(--color-lavender);
+  }
   .rsvp-form {
     padding: clamp(24px, 5vw, 56px);
 
@@ -579,16 +629,6 @@
     .loader {
       animation-duration: 1.8s;
     }
-  }
-
-  .form-notice {
-    margin: 24px 0 0;
-
-    color: var(--color-olive);
-
-    font-size: 0.85rem;
-
-    line-height: 1.8;
   }
 
   @media (max-width: 600px) {
