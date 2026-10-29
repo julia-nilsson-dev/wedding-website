@@ -7,8 +7,6 @@
 
   const name = ref("");
 
-  const phone = ref("");
-
   const wantsAccommodation = ref("");
 
   const foodPreferences = ref("");
@@ -29,7 +27,6 @@
 
     const data = {
       name: name.value,
-      phone: phone.value,
       attending: attending.value,
       wantsAccommodation: wantsAccommodation.value,
       foodPreferences: foodPreferences.value,
@@ -111,25 +108,7 @@
                   required
                 />
               </div>
-
-              <div class="field">
-                <label for="guest-phone">Telefonnummer</label>
-
-                <input
-                  id="guest-phone"
-                  v-model="phone"
-                  type="tel"
-                  name="phone"
-                  autocomplete="tel"
-                  placeholder="Ditt telefonnummer"
-                />
-
-                <p class="field-hint">
-                  Så att våra toastmasters kan kontakta dig vid behov.
-                </p>
-              </div>
             </div>
-
             <div class="form-section">
               <p class="form-section-label">02 — DIN NÄRVARO</p>
 
@@ -170,7 +149,6 @@
                     Gangvide. Är du intresserad av att bo på gården under
                     bröllopshelgen?
                   </legend>
-                  ß
                   <p class="field-hint">
                     Boendet erbjuds till gäster som reser till Gotland från
                     fastlandet.
