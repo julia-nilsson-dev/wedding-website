@@ -58,8 +58,7 @@
         <h2>Den stora dagen</h2>
 
         <p class="section-intro">
-          En dag fylld av kärlek, gotländska traditioner, god mat och fest. Vi
-          längtar efter att få fira tillsammans med er!
+          En dag fylld av kärlek, gotländska traditioner, god mat och fest.
         </p>
       </header>
 

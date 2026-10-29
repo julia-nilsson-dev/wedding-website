@@ -63,7 +63,7 @@
 
       <p class="section-intro">
         Här har vi samlat sådant som kan vara bra att veta inför vårt bröllop på
-        Gotland. Vi ser fram emot att få fira tillsammans med er!
+        Gotland.
       </p>
 
       <div class="info-list">

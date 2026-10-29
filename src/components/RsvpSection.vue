@@ -68,7 +68,6 @@
         <p class="rsvp-deadline">Svara senast 14 februari</p>
 
         <p class="rsvp-intro">
-          Vi längtar efter att få fira vår stora dag tillsammans med dig!
           Vänligen OSA genom att fylla i formuläret nedan. Om du är inbjuden som
           + 1 ber vi dig också att registrera dig separat så att vi kan planera
           dagen på bästa sätt.

@@ -55,7 +55,6 @@
     object-position: center;
   }
 
-  /* Begränsa sektionens höjd när bilden når maxhöjden */
   @supports (height: 98svh) {
     .hero-image-container {
       height: auto;
