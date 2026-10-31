@@ -62,8 +62,7 @@
       <h2>Praktisk information</h2>
 
       <p class="section-intro">
-        Här har vi samlat sådant som kan vara bra att veta inför vårt bröllop på
-        Gotland.
+        Här har vi samlat sådant som kan vara bra att veta inför vårt bröllop.
       </p>
 
       <div class="info-list">

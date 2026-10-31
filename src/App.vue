@@ -8,6 +8,8 @@
   import RsvpSection from "./components/RsvpSection.vue";
   import SpeechSection from "./components/SpeechSection.vue";
   import SiteFooter from "./components/SiteFooter.vue";
+  import VideoSection from "./components/VideoSection.vue";
+  import VideoSectionTwo from "./components/VideoSectionTwo.vue";
 </script>
 
 <template>
@@ -16,6 +18,8 @@
   <main>
     <HeroSection />
     <SaveTheDate />
+    <VideoSection />
+    <VideoSectionTwo />
     <WeekendSchedule />
     <PracticalInfo />
     <AccommodationSection />

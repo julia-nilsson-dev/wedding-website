@@ -1,6 +1,7 @@
 <script setup>
   import { ref } from "vue";
   import saveTheDateVideo from "../assets/videos/save-the-date.mov";
+  import heroImage from "../assets/images/hero.jpg";
 
   const isPlaying = ref(false);
   const videoRef = ref(null);
@@ -44,7 +45,7 @@
         preload="metadata"
         @ended="isPlaying = false"
       >
-        <source :src="saveTheDateVideo" />
+        <source :src="saveTheDateVideo" type="video/mp4" />
         Din webbläsare kan inte spela upp videon.
       </video>
 
@@ -53,10 +54,11 @@
           v-if="!isPlaying"
           class="video-cover"
           type="button"
+          :style="{ backgroundImage: `url(${heroImage})` }"
           aria-label="Spela upp vår Save the Date-film"
           @click="playVideo"
         >
-          <span class="cover-eyebrow">EN LITEN FILMHÄLSNING</span>
+          <span class="cover-eyebrow"> EN LITEN FILMHÄLSNING </span>
 
           <span class="cover-title">Alice & Kalle</span>
 
@@ -72,7 +74,7 @@
             </svg>
           </span>
 
-          <span class="cover-instruction">TRYCK FÖR ATT SE FILMEN</span>
+          <span class="cover-instruction"> TRYCK FÖR ATT SE FILMEN </span>
         </button>
       </Transition>
     </div>
@@ -149,19 +151,33 @@
     justify-content: center;
     padding: 24px;
     border: 0;
-    background: #e9e6dc;
-    color: var(--color-olive);
+    background-size: cover;
+    background-position: center;
+    color: #fffdf9;
     cursor: pointer;
-    transition: background-color 300ms ease;
   }
 
-  .video-cover:hover {
-    background: #e4e0d5;
+  /* Blur och mörk overlay över hela bilden */
+  .video-cover::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(40, 40, 35, 0.3);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+  }
+
+  .cover-eyebrow,
+  .cover-title,
+  .play-button,
+  .cover-instruction {
+    position: relative;
+    z-index: 1;
   }
 
   .cover-eyebrow {
     margin-bottom: 16px;
-    color: var(--color-lavender);
+    color: #fffdf9;
     font-size: 0.65rem;
     letter-spacing: 0.2em;
   }
@@ -172,13 +188,6 @@
     line-height: 1.15;
   }
 
-  .cover-subtitle {
-    margin-top: 8px;
-    font-family: var(--font-heading);
-    font-size: 1rem;
-    letter-spacing: 0.12em;
-  }
-
   .play-button {
     display: flex;
     width: 58px;
@@ -187,7 +196,7 @@
     justify-content: center;
     margin-top: 28px;
     padding-left: 3px;
-    border: 1px solid rgb(147 112 158 / 45%);
+    border: 1px solid rgb(255 255 255 / 45%);
     border-radius: 50%;
     background: var(--color-lavender);
     color: #fffdf9;
@@ -203,7 +212,7 @@
 
   .cover-instruction {
     margin-top: 14px;
-    color: var(--color-olive);
+    color: #fffdf9;
     font-size: 0.58rem;
     letter-spacing: 0.16em;
   }
