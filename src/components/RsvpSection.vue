@@ -68,9 +68,7 @@
         <p class="rsvp-deadline">Svara senast 14 februari</p>
 
         <p class="rsvp-intro">
-          Vänligen OSA genom att fylla i formuläret nedan. Om du är inbjuden som
-          + 1 ber vi dig också att registrera dig separat så att vi kan planera
-          dagen på bästa sätt.
+          Vänligen OSA genom att fylla i formuläret nedan.
         </p>
         <p class="form-notice">
           Vi ser fram emot att höra från dig!

@@ -1,7 +1,6 @@
 <script setup>
   import SiteNavigation from "./components/SiteNavigation.vue";
   import HeroSection from "./components/HeroSection.vue";
-  import SaveTheDate from "./components/SaveTheDate.vue";
   import AccommodationSection from "./components/AccommodationSection.vue";
   import PracticalInfo from "./components/PracticalInfo.vue";
   import WeekendSchedule from "./components/WeekendSchedule.vue";
@@ -9,7 +8,6 @@
   import SpeechSection from "./components/SpeechSection.vue";
   import SiteFooter from "./components/SiteFooter.vue";
   import VideoSection from "./components/VideoSection.vue";
-  import VideoSectionTwo from "./components/VideoSectionTwo.vue";
 </script>
 
 <template>
@@ -17,9 +15,7 @@
 
   <main>
     <HeroSection />
-    <SaveTheDate />
     <VideoSection />
-    <VideoSectionTwo />
     <WeekendSchedule />
     <PracticalInfo />
     <AccommodationSection />
